@@ -19,35 +19,34 @@
               @foreach($orders as $order)
 
               @php
-
               $status = '';
-              $payment_status '';
+              $payment_status = '';
 
               if($order->status == 'new') {
-                $status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Baru</span>'
+                $status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Baru</span>';
               }
               if($order->status == 'processing') {
-                $status = '<span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">Diproses</span>'
-              }
+                $status = '<span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">Diproses</span>';
+              };
               if($order->status == 'shipped') {
-                $status = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Dikemas</span>'
+                $status = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Dikemas</span>';
               }
               if($order->status == 'delivered') {
-                $status = '<span class="bg-green-700 py-1 px-3 rounded text-white shadow">Dikirim</span>'
+                $status = '<span class="bg-green-700 py-1 px-3 rounded text-white shadow">Dikirim</span>';
               }
               if($order->status == 'canceled') {
-                $status = '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Dibatalkan</span>'
+                $status = '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Dibatalkan</span>';
               }
 
 
               if($order->payment_status == 'pending') {
-                $status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Pending</span>'
+                $payment_status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Pending</span>';
               }
               if($order->payment_status == 'paid') {
-                $status = '<span class="bg-green-600 py-1 px-3 rounded text-white shadow">Dibayar</span>'
+                $payment_status = '<span class="bg-green-600 py-1 px-3 rounded text-white shadow">Dibayar</span>';
               }
               if($order->payment_status == 'failed') {
-                $status = '<span class="bg-red-600 py-1 px-3 rounded text-white shadow">Dibatalkan</span>'
+                $payment_status = '<span class="bg-red-600 py-1 px-3 rounded text-white shadow">Dibatalkan</span>';
               }
 
               @endphp

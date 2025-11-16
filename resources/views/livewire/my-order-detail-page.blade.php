@@ -79,19 +79,19 @@
               $status = '';
 
               if($order->status == 'new') {
-                $status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Baru</span>'
+                $status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Baru</span>';
               }
               if($order->status == 'processing') {
-                $status = '<span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">Diproses</span>'
+                $status = '<span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">Diproses</span>';
               }
               if($order->status == 'shipped') {
-                $status = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Dikemas</span>'
+                $status = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Dikemas</span>';
               }
               if($order->status == 'delivered') {
-                $status = '<span class="bg-green-700 py-1 px-3 rounded text-white shadow">Dikirim</span>'
+                $status = '<span class="bg-green-700 py-1 px-3 rounded text-white shadow">Dikirim</span>';
               }
               if($order->status == 'canceled') {
-                $status = '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Dibatalkan</span>'
+                $status = '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Dibatalkan</span>';
               }
 
             @endphp
@@ -128,13 +128,13 @@
             $payment_status = '';
 
             if($order->payment_status == 'pending') {
-                $status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Pending</span>'
+                $payment_status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Pending</span>';
               }
               if($order->payment_status == 'paid') {
-                $status = '<span class="bg-green-600 py-1 px-3 rounded text-white shadow">Dibayar</span>'
+                $payment_status = '<span class="bg-green-600 py-1 px-3 rounded text-white shadow">Dibayar</span>';
               }
               if($order->payment_status == 'failed') {
-                $status = '<span class="bg-red-600 py-1 px-3 rounded text-white shadow">Dibatalkan</span>'
+                $payment_status = '<span class="bg-red-600 py-1 px-3 rounded text-white shadow">Dibatalkan</span>';
               }
 
             @endphp
@@ -166,7 +166,7 @@
             <tr wire:key="{{ $item->id }}">
               <td class="py-4">
                 <div class="flex items-center">
-                  <img class="h-16 w-16 mr-4" src="{{ url('storage', $item->product->image[0]) }}" alt="{{ $item->product->name }}">
+                  <img class="h-16 w-16 mr-4" src="{{ url('storage', $item->product->images[0]) }}" alt="{{ $item->product->name }}">
                   <span class="font-semibold">{{ $item->product->name }}</span>
                 </div>
               </td>
@@ -202,7 +202,7 @@
         <h2 class="text-lg font-semibold mb-4">Summary</h2>
         <div class="flex justify-between mb-2">
           <span>Subtotal</span>
-          <span>{{ Number::currency($item->total->grand_total, 'IDR') }}</span>
+          <span>{{ Number::currency($item->order->grand_total, 'IDR') }}</span>
         </div>
         <div class="flex justify-between mb-2">
           <span>Taxes</span>
@@ -215,7 +215,7 @@
         <hr class="my-2">
         <div class="flex justify-between mb-2">
           <span class="font-semibold">Grand Total</span>
-          <span class="font-semibold">{{ Number::currency($item->total->grand_total, 'IDR') }}</span>
+          <span class="font-semibold">{{ Number::currency($item->order->grand_total, 'IDR') }}</span>
         </div>
 
       </div>

@@ -24,7 +24,7 @@ class MyOrderDetailPage extends Component {
 
         return view('livewire.my-order-detail-page', [
             'order_items' => $order_items,
-            'address' => $address.
+            'address' => $address,
             'order' => $order
         ]);
     }

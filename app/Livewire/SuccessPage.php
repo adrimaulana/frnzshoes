@@ -15,7 +15,7 @@ class SuccessPage extends Component {
 
         return view('livewire.success-page', [
 
-            'order' => $latest_order;
+            'order' => $latest_order
         ]);
     }
 }
