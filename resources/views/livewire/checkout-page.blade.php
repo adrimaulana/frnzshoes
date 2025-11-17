@@ -16,7 +16,7 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-gray-700 dark:text-white mb-1" for="first_name">
-                                First Name
+                                Nama Depan
                             </label>
                             <input wire:model='first_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none @error('first_name') border-red-500 @enderror" id="first_name" type="text">
                             </input>
@@ -28,7 +28,7 @@
                         </div>
                         <div>
                             <label class="block text-gray-700 dark:text-white mb-1" for="last_name">
-                                Last Name
+                                Nama Belakang
                             </label>
                             <input wire:model='last_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none" id="last_name" type="text">
                             </input>
@@ -36,21 +36,21 @@
                     </div>
                     <div class="mt-4">
                         <label class="block text-gray-700 dark:text-white mb-1" for="phone">
-                            Phone
+                            No. Telepon
                         </label>
                         <input wire:model='phone' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none" id="phone" type="text">
                         </input>
                     </div>
                     <div class="mt-4">
                         <label class="block text-gray-700 dark:text-white mb-1" for="address">
-                            Address
+                            Alamat
                         </label>
                         <input wire:model='street_address' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none" id="address" type="text">
                         </input>
                     </div>
                     <div class="mt-4">
                         <label class="block text-gray-700 dark:text-white mb-1" for="city">
-                            City
+                            Kota
                         </label>
                         <input wire:model='city' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none" id="city" type="text">
                         </input>
@@ -58,14 +58,14 @@
                     <div class="grid grid-cols-2 gap-4 mt-4">
                         <div>
                             <label class="block text-gray-700 dark:text-white mb-1" for="state">
-                                State
+                                Negara
                             </label>
                             <input wire:model='state' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none" id="state" type="text">
                             </input>
                         </div>
                         <div>
                             <label class="block text-gray-700 dark:text-white mb-1" for="zip">
-                                ZIP Code
+                                Kode Pos
                             </label>
                             <input wire:model='zip_code' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none" id="zip" type="text">
                             </input>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="text-lg font-semibold mb-4">
-                    Select Payment Method
+                    Pilih Metode Pembayaran
                 </div>
                 <ul class="grid w-full gap-6 md:grid-cols-2">
                     <li>
@@ -95,7 +95,7 @@
                         <label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700" for="hosting-big">
                             <div class="block">
                                 <div class="w-full text-lg font-semibold">
-                                    Stripe
+                                    E Wallet
                                 </div>
                             </div>
                             <svg aria-hidden="true" class="w-5 h-5 ms-3 rtl:rotate-180" fill="none" viewbox="0 0 14 10" xmlns="http://www.w3.org/2000/svg">
@@ -124,24 +124,24 @@
                 </div>
                 <div class="flex justify-between mb-2 font-bold">
                     <span>
-                        Taxes
+                        Pajak
                     </span>
                     <span>
-                        0.00
+                        {{ Number::currency(0, 'IDR') }}
                     </span>
                 </div>
                 <div class="flex justify-between mb-2 font-bold">
                     <span>
-                        Shipping Cost
+                        Ongkos Kirim
                     </span>
                     <span>
-                        0.00
+                        {{ Number::currency(0, 'IDR') }}
                     </span>
                 </div>
                 <hr class="bg-slate-400 my-4 h-1 rounded">
                 <div class="flex justify-between mb-2 font-bold">
                     <span>
-                        Grand Total
+                        Total Keseluruhan
                     </span>
                     <span>
                         {{ Number::currency($grand_total, 'IDR') }}
@@ -150,7 +150,8 @@
                 </hr>
             </div>
             <button type="submit" class="bg-green-500 mt-4 w-full p-3 rounded-lg text-lg text-white hover:bg-green-600">
-                <span>Order Sekarang</span>
+                <span wire:loading.remove>Order Sekarang</span>
+                <span wire:loading>Mohon Menunggu....</span>
             </button>
             <div class="bg-white mt-4 rounded-xl shadow p-4 sm:p-7 dark:bg-slate-900">
                 <div class="text-xl font-bold underline text-gray-700 dark:text-white mb-2">

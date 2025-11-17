@@ -1,5 +1,5 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-  <h1 class="text-4xl font-bold text-slate-500">Order Details</h1>
+  <h1 class="text-4xl font-bold text-slate-500">Detail Order</h1>
 
   <!-- Grid -->
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-5">
@@ -44,7 +44,7 @@
         <div class="grow">
           <div class="flex items-center gap-x-2">
             <p class="text-xs uppercase tracking-wide text-gray-500">
-              Order Date
+              Tanggal Order
             </p>
           </div>
           <div class="mt-1 flex items-center gap-x-2">
@@ -70,7 +70,7 @@
         <div class="grow">
           <div class="flex items-center gap-x-2">
             <p class="text-xs uppercase tracking-wide text-gray-500">
-              Order Status
+              Status Order
             </p>
           </div>
           <div class="mt-1 flex items-center gap-x-2">
@@ -119,7 +119,7 @@
         <div class="grow">
           <div class="flex items-center gap-x-2">
             <p class="text-xs uppercase tracking-wide text-gray-500">
-              Payment Status
+              Status Pembayaran
             </p>
           </div>
           <div class="mt-1 flex items-center gap-x-2">
@@ -153,9 +153,9 @@
         <table class="w-full">
           <thead>
             <tr>
-              <th class="text-left font-semibold">Product</th>
-              <th class="text-left font-semibold">Price</th>
-              <th class="text-left font-semibold">Quantity</th>
+              <th class="text-left font-semibold">Produk</th>
+              <th class="text-left font-semibold">Harga</th>
+              <th class="text-left font-semibold">Unit</th>
               <th class="text-left font-semibold">Total</th>
             </tr>
           </thead>
@@ -184,13 +184,13 @@
       </div>
 
       <div class="bg-white overflow-x-auto rounded-lg shadow-md p-6 mb-4">
-        <h1 class="font-3xl font-bold text-slate-500 mb-3">Shipping Address</h1>
+        <h1 class="font-3xl font-bold text-slate-500 mb-3">Alamat Pengiriman</h1>
         <div class="flex justify-between items-center">
           <div>
             <p>{{ $address->street_address }},{{ $address->city }},{{ $address->state }},{{ $address->zip_code }}</p>
           </div>
           <div>
-            <p class="font-semibold">No. Telp:</p>
+            <p class="font-semibold">No. Telepon:</p>
             <p>{{ $address->phone }}</p>
           </div>
         </div>
@@ -199,22 +199,22 @@
     </div>
     <div class="md:w-1/4">
       <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-lg font-semibold mb-4">Summary</h2>
+        <h2 class="text-lg font-semibold mb-4">Ringkasan</h2>
         <div class="flex justify-between mb-2">
           <span>Subtotal</span>
           <span>{{ Number::currency($item->order->grand_total, 'IDR') }}</span>
         </div>
         <div class="flex justify-between mb-2">
-          <span>Taxes</span>
+          <span>Pajak</span>
           <span>{{ Number::currency(0, 'IDR') }}</span>
         </div>
         <div class="flex justify-between mb-2">
-          <span>Shipping</span>
+          <span>Ongkos Kirim</span>
           <span>{{ Number::currency(0, 'IDR') }}</span>
         </div>
         <hr class="my-2">
         <div class="flex justify-between mb-2">
-          <span class="font-semibold">Grand Total</span>
+          <span class="font-semibold">Total Keseluruhan</span>
           <span class="font-semibold">{{ Number::currency($item->order->grand_total, 'IDR') }}</span>
         </div>
 

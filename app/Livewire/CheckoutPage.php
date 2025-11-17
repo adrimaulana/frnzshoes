@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
-#[Title('Checkout')]
+#[Title('Checkout - FrnzShoes')]
 class CheckoutPage extends Component {
 
     public $first_name;

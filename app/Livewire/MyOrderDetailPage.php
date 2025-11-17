@@ -8,7 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Address;
 use App\Models\Order;
 
-#[Title('Order Detail')]
+#[Title('Detail Order - FrnzShoes')]
 class MyOrderDetailPage extends Component {
 
     public $order_id;

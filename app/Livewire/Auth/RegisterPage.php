@@ -8,7 +8,7 @@ use Livewire\Attributes\Title;
 use Illuminate\Support\Facades\Hash;
 
 
-#[Title('Register')]
+#[Title('Daftar')]
 class RegisterPage extends Component {
 
     public $name;

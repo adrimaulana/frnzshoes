@@ -7,7 +7,7 @@ use Livewire\Attributes\Title;
 use App\Helpers\CartManagement;
 use App\Livewire\Partials\Navbar;
 
-#[Title('Cart - FrnzShoes')]
+#[Title('Keranjang - FrnzShoes')]
 class CartPage extends Component {
 
     public $cart_items = [];
@@ -19,7 +19,7 @@ class CartPage extends Component {
     }
 
     public function removeItem($product_id) {
-        $this->cart_items = CartManagement::removeCartItem($product_id);
+        $this->cart_items = CartManagement::removeCartItems($product_id);
         $this->grand_total = CartManagement::calculateGrandTotal($this->cart_items);
         $this->dispatch('update-cart-count', total_count: count($this->cart_items))->to(Navbar::class);
     }

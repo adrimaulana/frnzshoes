@@ -9,7 +9,7 @@ use App\Helpers\CartManagement;
 use App\Livewire\Partials\Navbar;
 
 
-#[Title('Product Detail - FrnzShoes')]
+#[Title('Detail Produk - FrnzShoes')]
 class ProductDetailPage extends Component
 {
 

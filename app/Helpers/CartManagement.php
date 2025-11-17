@@ -89,7 +89,7 @@ class CartManagement {
 			}
 		}
 
-		self::getCartItemsFromCookie($cart_items);
+		self::addCartItemsToCookie($cart_items);
 		return $cart_items;
 	}
 
